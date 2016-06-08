@@ -2,7 +2,9 @@ class BeersController < ApplicationController
   def index
     @beers = Beer.all
     @brewery = Brewery.new
-    @beer = Beer.find_by(params[:style])
+    @beer = Beer.all
+     @beer = Beer.find_by(params[:style])
+#         <td><%= Brewery.find_by(:id => @beer.brewery_id).brewery_name %></td>
   end
 
   def show
