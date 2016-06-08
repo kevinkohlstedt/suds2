@@ -1,108 +1,103 @@
-<!-- Validation failure messages -->
-<% if @beer.errors.any? %>
-  <% @beer.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
+  <!-- Validation failure messages -->
+  <% if @beer.errors.any? %>
+    <% @beer.errors.full_messages.each do |message| %>
+      <div class="alert alert-dismissable alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= message %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 
-<div class="page-header">
-  <h3>Add Beer</h3>
-</div>
-
-<div class="row">
-  <div class="col-md-12">
-    <form action="/create_beer" method="post">
-      <!-- Hidden input for authenticity token to protect from forgery -->
-      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-
-            <!-- Label and input for beer_name -->
-            <div class="form-group">
-              <label for="beer_name" class="control-label">
-                Beer name
-              </label>
-
-              <input type="text" id="beer_name" name="beer_name" placeholder="Beer name" class="form-control" value="<%= @beer.beer_name %>">
-            </div>
-
-            <!-- Label and input for brewery_id -->
-            <div class="form-group">
-              <label for="brewery_id" class="control-label">
-                Brewery
-              </label>
-
-      <select class="form-control" name="brewery_id">
-        <% Brewery.all.each do |brewery| %>
-        <option><%= brewery.brewery_name %></option>
-      <% end %>
-      </select>
-
-            </div>
-
-      <!-- Label and input for style -->
-      <div class="form-group">
-        <label for="style" class="control-label">
-          Style
-        </label>
-
-        <input type="text" id="style" name="style" placeholder="Style" class="form-control" value="<%= @beer.style %>">
-      </div>
-
-      <!-- Label and input for users_id
-      <div class="form-group">
-        <label for="users_id" class="control-label">
-          Users
-        </label>
-
-        <input type="text" id="users_id" name="users_id" placeholder="Users" class="form-control" value="<%= @beer.users_id %>">
-      </div>
--->
-
-
-
-      <!-- Label and input for rating_1_10 -->
-      <div class="form-group">
-        <label for="rating_1_10" class="control-label">
-          Rating (1 - 10)
-        </label>
-
-        <input type="text" id="rating_1_10" name="rating_1_10" placeholder="Rating 1 10" class="form-control" value="<%= @beer.rating_1_10 %>">
-      </div>
-
-      <!-- Label and input for abv -->
-      <div class="form-group">
-        <label for="abv" class="control-label">
-          ABV (%)
-        </label>
-
-        <input type="text" id="abv" name="abv" placeholder="Abv" class="form-control" value="<%= @beer.abv %>">
-      </div>
-
-      <!-- Label and input for location_consumed -->
-      <div class="form-group">
-        <label for="location_consumed" class="control-label">
-          Location consumed
-        </label>
-
-        <input type="text" id="location_consumed" name="location_consumed" placeholder="Location consumed" class="form-control" value="<%= @beer.location_consumed %>">
-      </div>
-
-      <!-- Label and input for tasting_notes -->
-      <div class="form-group">
-        <label for="tasting_notes" class="control-label">
-          Tasting notes
-        </label>
-
-        <input type="text" id="tasting_notes" name="tasting_notes" placeholder="Tasting notes" class="form-control" value="<%= @beer.tasting_notes %>">
-      </div>
-
-      <button class="btn btn-success">
-        Create Beer
-      </button>
-      or
-      <a href="/beers">Cancel</a>
-    </form>
+  <div class="page-header">
+    <h3>Add Beer</h3>
   </div>
-</div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <form action="/create_beer" method="post">
+        <!-- Hidden input for authenticity token to protect from forgery -->
+        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+              <!-- Label and input for beer_name -->
+              <div class="form-group">
+                <label for="beer_name" class="control-label">
+                  Beer name
+                </label>
+
+                <input type="text" id="beer_name" name="beer_name" placeholder="Beer name" class="form-control" value="<%= @beer.beer_name %>">
+              </div>
+
+              <!-- Label and input for brewery_id -->
+              <div class="form-group">
+                <label for="brewery_id" class="control-label">
+                  Brewery
+                </label>
+
+  <%= select_tag(:brewery_id, options_from_collection_for_select(Brewery.all, :id, :brewery_name), :class => "form-control") %>
+              </div>
+
+        <!-- Label and input for style -->
+        <div class="form-group">
+          <label for="style" class="control-label">
+            Style
+          </label>
+
+          <input type="text" id="style" name="style" placeholder="Style" class="form-control" value="<%= @beer.style %>">
+        </div>
+
+        <!-- Label and input for users_id
+        <div class="form-group">
+          <label for="users_id" class="control-label">
+            Users
+          </label>
+
+          <input type="text" id="users_id" name="users_id" placeholder="Users" class="form-control" value="<%= @beer.users_id %>">
+        </div>
+  -->
+
+
+
+        <!-- Label and input for rating_1_10 -->
+        <div class="form-group">
+          <label for="rating_1_10" class="control-label">
+            Rating (1 - 10)
+          </label>
+
+          <input type="text" id="rating_1_10" name="rating_1_10" placeholder="Rating 1 10" class="form-control" value="<%= @beer.rating_1_10 %>">
+        </div>
+
+        <!-- Label and input for abv -->
+        <div class="form-group">
+          <label for="abv" class="control-label">
+            ABV (%)
+          </label>
+
+          <input type="text" id="abv" name="abv" placeholder="Abv" class="form-control" value="<%= @beer.abv %>">
+        </div>
+
+        <!-- Label and input for location_consumed -->
+        <div class="form-group">
+          <label for="location_consumed" class="control-label">
+            Location consumed
+          </label>
+
+          <input type="text" id="location_consumed" name="location_consumed" placeholder="Location consumed" class="form-control" value="<%= @beer.location_consumed %>">
+        </div>
+
+        <!-- Label and input for tasting_notes -->
+        <div class="form-group">
+          <label for="tasting_notes" class="control-label">
+            Tasting notes
+          </label>
+
+          <input type="text" id="tasting_notes" name="tasting_notes" placeholder="Tasting notes" class="form-control" value="<%= @beer.tasting_notes %>">
+        </div>
+
+        <button class="btn btn-success">
+          Create Beer
+        </button>
+        or
+        <a href="/beers">Cancel</a>
+      </form>
+    </div>
+  </div>

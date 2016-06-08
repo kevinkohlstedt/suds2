@@ -32,6 +32,7 @@ class BeersController < ApplicationController
 
   def edit
     @beer = Beer.find(params[:id])
+    @brewery = Beer.find(params[:id])
   end
 
   def update
