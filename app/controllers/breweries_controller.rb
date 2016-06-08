@@ -15,6 +15,7 @@ class BreweriesController < ApplicationController
     @brewery = Brewery.new
     @brewery.brewery_location = params[:brewery_location]
     @brewery.brewery_name = params[:brewery_name]
+    @brewery.image_url = params[:image_url]
 
     if @brewery.save
       redirect_to "/breweries", :notice => "Brewery created successfully."
@@ -32,6 +33,7 @@ class BreweriesController < ApplicationController
 
     @brewery.brewery_location = params[:brewery_location]
     @brewery.brewery_name = params[:brewery_name]
+    @brewery.image_url = params[:image_url]
 
     if @brewery.save
       redirect_to "/breweries", :notice => "Brewery updated successfully."

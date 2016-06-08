@@ -36,6 +36,15 @@
         <input type="text" id="brewery_location" name="brewery_location" placeholder="Brewery location" class="form-control" value="<%= @brewery.brewery_location %>">
       </div>
 
+      <!-- Label and input for brewery image_url -->
+      <div class="form-group">
+        <label for="image_url" class="control-label">
+          Brewery Logo URL
+        </label>
+
+        <input type="text" id="image_url" name="image_url" placeholder="Brewery Logo URL" class="form-control" value="<%= @brewery.image_url %>">
+      </div>
+
       <button class="btn btn-success">
         Create Brewery
       </button>
