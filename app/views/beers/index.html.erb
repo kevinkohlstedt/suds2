@@ -61,6 +61,14 @@
         <th>Style</th>
         <th>ABV (%)</th>
       </tr>
+
+      <tr>
+        <td><%= @beer.beer_name %></td>
+        <td><%= Brewery.find_by(:id => @beer.brewery_id).brewery_name %></td>
+        <td><%= @beer.style %></td>
+        <td><%= @beer.abv %></td>
+</tr>
+
     </table>
   </div>
 </div>
