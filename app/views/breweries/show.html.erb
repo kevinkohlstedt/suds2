@@ -39,11 +39,11 @@
 
       </tr>
 
-      <% @beers.each do |beer| %>
+      <% @breweries.each do |brewery| %>
       <tr>
-        <td><%= beer.beer_name %></td>
-        <td><%= beer.style %></td>
-        <td><%= beer.abv %></td>
+        <td><%= Beer.find_by(:id => brewery_id).beer_name %></td>
+        <td><%= Beer.find_by(:id => brewery_id).beer_style %></td>
+        <td><%= Beer.find_by(:id => brewery_id).abv %></td>
 </tr>
 <% end %>
 </table>

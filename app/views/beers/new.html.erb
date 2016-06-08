@@ -27,14 +27,19 @@
               <input type="text" id="beer_name" name="beer_name" placeholder="Beer name" class="form-control" value="<%= @beer.beer_name %>">
             </div>
 
-      <!-- Label and input for brewery_name -->
-      <div class="form-group">
-        <label for="brewery_name" class="control-label">
-          Brewery name
-        </label>
+            <!-- Label and input for brewery_id -->
+            <div class="form-group">
+              <label for="brewery_id" class="control-label">
+                Brewery
+              </label>
 
-        <input type="text" id="brewery_name" name="brewery_name" placeholder="Brewery name" class="form-control" value="<%= @beer.brewery_name %>">
-      </div>
+      <select class="form-control" name="brewery_id">
+        <% Brewery.all.each do |brewery| %>
+        <option><%= brewery.brewery_name %></option>
+      <% end %>
+      </select>
+
+            </div>
 
       <!-- Label and input for style -->
       <div class="form-group">
@@ -54,20 +59,13 @@
         <input type="text" id="users_id" name="users_id" placeholder="Users" class="form-control" value="<%= @beer.users_id %>">
       </div>
 -->
-      <!-- Label and input for brewery_id
-      <div class="form-group">
-        <label for="brewery_id" class="control-label">
-          Brewery
-        </label>
 
-        <input type="text" id="brewery_id" name="brewery_id" placeholder="Brewery" class="form-control" value="<%= @beer.brewery_id %>">
-      </div>
- -->
+
 
       <!-- Label and input for rating_1_10 -->
       <div class="form-group">
         <label for="rating_1_10" class="control-label">
-          Rating 1 10
+          Rating (1 - 10)
         </label>
 
         <input type="text" id="rating_1_10" name="rating_1_10" placeholder="Rating 1 10" class="form-control" value="<%= @beer.rating_1_10 %>">
@@ -76,7 +74,7 @@
       <!-- Label and input for abv -->
       <div class="form-group">
         <label for="abv" class="control-label">
-          Abv
+          ABV (%)
         </label>
 
         <input type="text" id="abv" name="abv" placeholder="Abv" class="form-control" value="<%= @beer.abv %>">
