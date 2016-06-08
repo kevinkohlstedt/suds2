@@ -42,7 +42,7 @@
           Brewery
         </label>
 
-<%= select_tag(:brewery_id, options_from_collection_for_select(Brewery.all, :id, :brewery_name, @brewery.brewery_id), :class => "form-control") %>
+<%= select_tag(:brewery_id, options_from_collection_for_select(Brewery.all, :id, :brewery_name, @beer.brewery_id), :class => "form-control") %>
       </div>
 
             <!-- Label and input for style -->
@@ -53,7 +53,7 @@
 
               <input type="text" id="style" name="style" placeholder="Style" class="form-control" value="<%= @beer.style %>">
             </div>
-            
+
       <!-- Label and input for rating_1_10 -->
       <div class="form-group">
         <label for="rating_1_10" class="control-label">

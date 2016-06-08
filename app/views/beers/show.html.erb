@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3>Beer #<%= @beer.id %></h3>
+  <h3><%= @beer.beer_name %></h3>
 </div>
 
 <div class="row">
@@ -9,7 +9,7 @@
       <dd><%= @beer.beer_name %></dd>
 
       <dt>Brewery name</dt>
-      <dd><%= @beer.brewery_name %></dd>
+      <dd><%= Brewery.find_by(:id => @beer.brewery_id).brewery_name %></dd>
 
       <dt>Style</dt>
       <dd><%= @beer.style %></dd>

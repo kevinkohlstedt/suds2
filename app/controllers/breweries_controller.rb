@@ -5,7 +5,7 @@ class BreweriesController < ApplicationController
 
   def show
     @brewery = Brewery.find(params[:id])
-    @beers = Brewery.find(params[:id])
+    @beer = Beer.new
   end
 
   def new

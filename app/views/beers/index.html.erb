@@ -23,7 +23,7 @@
       <% @beers.each do |beer| %>
       <tr>
         <td><%= beer.beer_name %></td>
-        <td><%= beer.brewery_name %></td>
+        <td><%= Brewery.find_by(:id => beer.brewery_id).brewery_name %></td>
         <td><%= beer.style %></td>
         <td><%= beer.rating_1_10 %></td>
         <td><%= beer.abv %></td>
