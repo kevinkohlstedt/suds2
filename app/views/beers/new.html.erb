@@ -18,6 +18,33 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
+            <!-- Label and input for beer_name -->
+            <div class="form-group">
+              <label for="beer_name" class="control-label">
+                Beer name
+              </label>
+
+              <input type="text" id="beer_name" name="beer_name" placeholder="Beer name" class="form-control" value="<%= @beer.beer_name %>">
+            </div>
+
+      <!-- Label and input for brewery_name -->
+      <div class="form-group">
+        <label for="brewery_name" class="control-label">
+          Brewery name
+        </label>
+
+        <input type="text" id="brewery_name" name="brewery_name" placeholder="Brewery name" class="form-control" value="<%= @beer.brewery_name %>">
+      </div>
+
+      <!-- Label and input for style -->
+      <div class="form-group">
+        <label for="style" class="control-label">
+          Style
+        </label>
+
+        <input type="text" id="style" name="style" placeholder="Style" class="form-control" value="<%= @beer.style %>">
+      </div>
+
       <!-- Label and input for users_id -->
       <div class="form-group">
         <label for="users_id" class="control-label">
@@ -72,32 +99,7 @@
         <input type="text" id="location_consumed" name="location_consumed" placeholder="Location consumed" class="form-control" value="<%= @beer.location_consumed %>">
       </div>
 
-      <!-- Label and input for style -->
-      <div class="form-group">
-        <label for="style" class="control-label">
-          Style
-        </label>
 
-        <input type="text" id="style" name="style" placeholder="Style" class="form-control" value="<%= @beer.style %>">
-      </div>
-
-      <!-- Label and input for brewery_name -->
-      <div class="form-group">
-        <label for="brewery_name" class="control-label">
-          Brewery name
-        </label>
-
-        <input type="text" id="brewery_name" name="brewery_name" placeholder="Brewery name" class="form-control" value="<%= @beer.brewery_name %>">
-      </div>
-
-      <!-- Label and input for beer_name -->
-      <div class="form-group">
-        <label for="beer_name" class="control-label">
-          Beer name
-        </label>
-
-        <input type="text" id="beer_name" name="beer_name" placeholder="Beer name" class="form-control" value="<%= @beer.beer_name %>">
-      </div>
 
       <button class="btn btn-success">
         Create Beer

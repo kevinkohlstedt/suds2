@@ -9,29 +9,27 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Users</th>
-        <th>Brewery</th>
-        <th>Tasting notes</th>
-        <th>Rating 1 10</th>
-        <th>Abv</th>
-        <th>Location consumed</th>
-        <th>Style</th>
-        <th>Brewery name</th>
         <th>Beer name</th>
+        <th>Brewery name</th>
+        <th>Style</th>
+        <th>Rating (1 - 10)</th>
+        <th>ABV (%)</th>
+        <th>Location consumed</th>
+        <th>Tasting notes</th>
+
         <th>Actions</th>
       </tr>
 
       <% @beers.each do |beer| %>
       <tr>
-        <td><%= beer.users_id %></td>
-        <td><%= beer.brewery_id %></td>
-        <td><%= beer.tasting_notes %></td>
+        <td><%= beer.beer_name %></td>
+        <td><%= beer.brewery_name %></td>
+        <td><%= beer.style %></td>
         <td><%= beer.rating_1_10 %></td>
         <td><%= beer.abv %></td>
         <td><%= beer.location_consumed %></td>
-        <td><%= beer.style %></td>
-        <td><%= beer.brewery_name %></td>
-        <td><%= beer.beer_name %></td>
+        <td><%= beer.tasting_notes %></td>
+
         <td>
           <a href="/beers/<%= beer.id %>" class="btn btn-primary">Show</a>
           <a href="/beers/<%= beer.id %>/edit" class="btn btn-warning">Edit</a>
@@ -39,6 +37,30 @@
         </td>
       </tr>
       <% end %>
+    </table>
+  </div>
+</div>
+
+
+<div class="page-header">
+  <h1>
+    Beer Recommendations
+  </h1>
+  <p>
+    Based on the beers you have consumed, we recommend the following:
+  </p>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Beer name</th>
+        <th>Brewery name</th>
+        <th>Style</th>
+        <th>ABV (%)</th>
+      </tr>
     </table>
   </div>
 </div>
