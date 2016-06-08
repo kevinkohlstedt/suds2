@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Brewery #<%= @brewery.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Brewery location</dt>
+      <dd><%= @brewery.brewery_location %></dd>
+
+      <dt>Brewery name</dt>
+      <dd><%= @brewery.brewery_name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/breweries" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/breweries/<%= @brewery.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_brewery/<%= @brewery.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

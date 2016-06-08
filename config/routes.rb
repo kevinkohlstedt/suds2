@@ -1,4 +1,55 @@
 Rails.application.routes.draw do
+  # Routes for the Brewery_to_beer resource:
+  # CREATE
+  get "/brewery_to_beers/new", :controller => "brewery_to_beers", :action => "new"
+  post "/create_brewery_to_beer", :controller => "brewery_to_beers", :action => "create"
+
+  # READ
+  get "/brewery_to_beers", :controller => "brewery_to_beers", :action => "index"
+  get "/brewery_to_beers/:id", :controller => "brewery_to_beers", :action => "show"
+
+  # UPDATE
+  get "/brewery_to_beers/:id/edit", :controller => "brewery_to_beers", :action => "edit"
+  post "/update_brewery_to_beer/:id", :controller => "brewery_to_beers", :action => "update"
+
+  # DELETE
+  get "/delete_brewery_to_beer/:id", :controller => "brewery_to_beers", :action => "destroy"
+  #------------------------------
+
+  # Routes for the Brewery resource:
+  # CREATE
+  get "/breweries/new", :controller => "breweries", :action => "new"
+  post "/create_brewery", :controller => "breweries", :action => "create"
+
+  # READ
+  get "/breweries", :controller => "breweries", :action => "index"
+  get "/breweries/:id", :controller => "breweries", :action => "show"
+
+  # UPDATE
+  get "/breweries/:id/edit", :controller => "breweries", :action => "edit"
+  post "/update_brewery/:id", :controller => "breweries", :action => "update"
+
+  # DELETE
+  get "/delete_brewery/:id", :controller => "breweries", :action => "destroy"
+  #------------------------------
+
+  # Routes for the Beer resource:
+  # CREATE
+  get "/beers/new", :controller => "beers", :action => "new"
+  post "/create_beer", :controller => "beers", :action => "create"
+
+  # READ
+  get "/beers", :controller => "beers", :action => "index"
+  get "/beers/:id", :controller => "beers", :action => "show"
+
+  # UPDATE
+  get "/beers/:id/edit", :controller => "beers", :action => "edit"
+  post "/update_beer/:id", :controller => "beers", :action => "update"
+
+  # DELETE
+  get "/delete_beer/:id", :controller => "beers", :action => "destroy"
+  #------------------------------
+
   devise_for :users
 
 # root 'beers#index'  ADD THIS BACK IN ONCE BEERS PAGE IS LIVE
