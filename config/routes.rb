@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+
+# root 'beers#index'  ADD THIS BACK IN ONCE BEERS PAGE IS LIVE
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
