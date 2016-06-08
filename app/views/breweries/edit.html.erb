@@ -18,15 +18,6 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for brewery_location -->
-      <div class="form-group">
-        <label for="brewery_location" class="control-label">
-          Brewery location
-        </label>
-
-        <input type="text" id="brewery_location" name="brewery_location" placeholder="Brewery location" class="form-control" value="<%= @brewery.brewery_location %>">
-      </div>
-
       <!-- Label and input for brewery_name -->
       <div class="form-group">
         <label for="brewery_name" class="control-label">
@@ -34,6 +25,15 @@
         </label>
 
         <input type="text" id="brewery_name" name="brewery_name" placeholder="Brewery name" class="form-control" value="<%= @brewery.brewery_name %>">
+      </div>
+
+      <!-- Label and input for brewery_location -->
+      <div class="form-group">
+        <label for="brewery_location" class="control-label">
+          Brewery location
+        </label>
+
+        <input type="text" id="brewery_location" name="brewery_location" placeholder="Brewery location" class="form-control" value="<%= @brewery.brewery_location %>">
       </div>
 
       <button class="btn btn-warning">
